@@ -1,0 +1,17 @@
+:root {
+  --primary: #ff4757;
+  --secondary: #ff6b81;
+  --btnColor: #1e90ff;
+  --btnColorHover: #3742fa;
+  --btnColorSecondary: #7bed9f;
+  --btnColorSecondaryHover: #2ed573;
+  --btnColorDanger: #ff6b81;
+  --btnColorDangerHover: #ff4757;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
