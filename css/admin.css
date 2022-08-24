@@ -1,6 +1,12 @@
 :root {
   --primary: #ff4757;
   --secondary: #ff6b81;
+  --btnColor: #1e90ff;
+  --btnColorHover: #3742fa;
+  --btnColorSecondary: #7bed9f;
+  --btnColorSecondaryHover: #2ed573;
+  --btnColorDanger: #ff6b81;
+  --btnColorDangerHover: #ff4757;
 }
 
 * {
@@ -23,6 +29,60 @@
 .clearfix {
   float: none;
   clear: both;
+}
+
+.tbl-full {
+  width: 100%;
+}
+
+table tr th {
+  border-bottom: 1px solid black;
+  padding: 1%;
+  text-align: left;
+}
+
+table tr td {
+  padding: 1%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--btnColor);
+  padding: 0.5% 2%;
+  color: white;
+  border: 0;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: var(--btnColorHover);
+}
+
+.btn-secondary {
+  background-color: var(--btnColorSecondary);
+  padding: 0.5% 2%;
+  color: white;
+  border: 0;
+  font-weight: bold;
+}
+
+.btn-secondary:hover {
+  background-color: var(--btnColorSecondaryHover);
+}
+
+.btn-danger {
+  background-color: var(--btnColorDanger);
+  padding: 0.5% 2%;
+  color: white;
+  border: 0;
+  font-weight: bold;
+}
+
+.btn-danger:hover {
+  background-color: var(--btnColorDangerHover);
 }
 
 /* CSS for Menu */
