@@ -5,11 +5,21 @@
 	<div class="wrapper">
 		<h2>Manage Admin</h2>
 
-		<br />
-		<a href="add-admin.php" class="btn-primary">Add admin</a>
-		<br />
-		<br />
+		<!-- Message Section Starts -->
+		<div class="message-container">
+			<a href="add-admin.php" class="btn-primary">Add admin</a>
+			<div class="message">
+				<?php
+				if (isset($_SESSION['add'])) {
+					echo $_SESSION['add']; // Displays the Session 'add'
+					unset($_SESSION['add']); // Removes the Session 'add'
+				}
+				?>
+			</div>
+		</div>
+		<!-- Message Section Ends-->
 
+		<!-- Table Section Starts -->
 		<table class="tbl-full">
 			<tr>
 				<th>
@@ -33,6 +43,7 @@
 				</td>
 			</tr>
 		</table>
+		<!-- Table Section Ends -->
 	</div>
 </div>
 <!-- Main Content Section Ends-->

@@ -25,21 +25,42 @@ class Admin
       password = :password
     ';
 
-    // Prepare statment
+    $queryUsername = 'SELECT * from tbl_admin
+    WHERE 
+      username = :username
+    ';
+
+    // Prepare statement
     $stmt = $this->conn->prepare($query);
+
+    $stmtUsername = $this->conn->prepare($queryUsername);
 
     // Clean Data
     $this->full_name = htmlspecialchars(strip_tags($this->full_name));
     $this->username = htmlspecialchars(strip_tags($this->username));
     $this->password = htmlspecialchars(strip_tags($this->password));
 
+    // Validation
+    if (strlen($this->full_name) <= 0 || strlen($this->username) <= 0 || strlen($this->password) <= 0) {
+      return false;
+    }
+
     // Bind data
     $stmt->bindParam(':full_name', $this->full_name);
     $stmt->bindParam(':username', $this->username);
     $stmt->bindParam(':password', $this->password);
 
+    $stmtUsername->bindParam(":username", $this->username);
+
     // Execute query
-    if ($stmt->execute()) {
+    $executeUsername = $stmtUsername->execute();
+    if (strlen($executeUsername) >= 1) { // username exists
+      // return false;
+    }
+
+    echo $executeUsername;
+
+    if ($stmt->execute()) { // Add query to DB
       return true;
     }
 
