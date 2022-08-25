@@ -69,4 +69,19 @@ class Admin
 
     return false;
   }
+
+  public function read()
+  {
+    $query = 'SELECT * from tbl_admin 
+    ORDER BY id DESC
+    ';
+
+    // Prepare statement
+    $stmt = $this->conn->prepare($query);
+
+    // Execute query
+    $stmt->execute();
+
+    return $stmt;
+  }
 }

@@ -1,6 +1,8 @@
 <?php
 include_once 'config/Database.php';
 include_once 'models/Admin.php';
+include_once 'admin/create.php';
+include_once 'admin/read.php';
 
 // Start session
 session_start();
