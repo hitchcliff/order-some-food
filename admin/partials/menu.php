@@ -1,4 +1,4 @@
-<?php include('../server/setup.php'); ?>
+<?php include('../api/setup.php'); ?>
 
 
 <!DOCTYPE html>

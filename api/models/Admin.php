@@ -10,7 +10,6 @@ class Admin
   public $full_name;
   public $username;
   public $password;
-
   public function __construct($db)
   {
     $this->conn = $db;
@@ -73,7 +72,7 @@ class Admin
   public function read()
   {
     $query = 'SELECT * from tbl_admin 
-    ORDER BY id DESC
+    ORDER BY id ASC
     ';
 
     // Prepare statement
@@ -83,5 +82,29 @@ class Admin
     $stmt->execute();
 
     return $stmt;
+  }
+
+  public function delete()
+  {
+    $query = 'DELETE from tbl_admin
+    WHERE id = :id
+    ';
+
+
+    // Prepare statement
+    $stmt = $this->conn->prepare($query);
+
+    // Bind data
+    $stmt->bindParam(":id", $this->id);
+
+    // Execute query
+    if ($stmt->execute()) {
+      return true;
+    };
+
+    // Print error something goes wrong
+    printf('Error: ', $stmt->error);
+
+    return false;
   }
 }

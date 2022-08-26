@@ -29,19 +29,33 @@
 				<th>Username</th>
 				<th>Actions</th>
 			</tr>
-			<tr>
-				<td>1.</td>
-				<td>Kevin Nacario</td>
-				<td>notkev1n</td>
-				<td>
-					<button class="btn-secondary">
-						Update Admin
-					</button>
-					<button class="btn-danger">
-						Delete Admin
-					</button>
+
+			<?php
+
+			// Instantiate ReadAdmin
+			$readAdmin = new ReadAdmin($db);
+			$results = $readAdmin->start();
+
+			// Loop each item
+			foreach ($results['data'] as $result) {
+				echo
+				"
+				<tr>
+					<td>" . $result['id'] . "</td>
+					<td>" . $result['full_name'] . "</td>
+					<td>" . $result['username'] . "</td>
+					<td>
+						<a class='btn-secondary' href=''>
+							Update Admin
+						</a>
+						<a class='btn-danger' href='" . DELETE_ADMIN_URL . "?id=" . $result['id'] . "'>
+							Delete Admin
+						</a>
 				</td>
-			</tr>
+				</tr>
+				";
+			}
+			?>
 		</table>
 		<!-- Table Section Ends -->
 	</div>
