@@ -19,7 +19,7 @@
 		<!-- Message Section Ends-->
 
 		<!-- Form Section Starts -->
-		<form action="" method="POST" class="form">
+		<form action="<?php echo CREATE_ADMIN_URL ?>" method="POST" class="form">
 			<div class="form-group">
 				<label for="full_name">Full name:</label>
 				<input class="form-input" type="text" placeholder="Enter name" name="full_name">
@@ -42,13 +42,3 @@
 </div>
 
 <?php include('partials/footer.php'); ?>
-
-<?php
-
-// Check if there are submissions
-if (isset($_POST['add-admin-submit'])) {
-	// Instantiate CreateAdmin
-	new CreateAdmin($db);
-};
-
-?>
