@@ -75,8 +75,17 @@ table tr td {
   align-items: center;
 }
 
+/* Error & Success */
 .message.error {
   color: var(--primary);
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
 }
 
 /* Form */

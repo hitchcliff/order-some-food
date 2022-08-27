@@ -21,13 +21,13 @@ if (isset($_GET['id'])) {
   // Delete admin
   $admin->delete();
 
-  $_SESSION['delete'] = 'Admin Deleted Successfully';
+  $_SESSION['delete'] = '<span class="success">Admin Deleted Successfully</span>';
 
   // Redirect user back to manage-admin.php
   header("location:" . MANAGE_ADMIN_URL);
 } else {
 
-  $_SESSION['delete'] = 'Admin not deleted';
+  $_SESSION['delete'] = '<span class="error">Admin not deleted</span>';
 
   // Redirect user back to manage-admin.php
   header("location:" . DELETE_ADMIN_URL);

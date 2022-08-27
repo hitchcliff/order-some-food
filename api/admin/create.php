@@ -23,13 +23,13 @@ $admin->password = md5($_POST['password']);
 // Create
 if ($admin->create()) {
   // Add session
-  $_SESSION['add'] = "Admin Added Successfully";
+  $_SESSION['add'] = "<span class='success'>Admin Added Successfully</span>";
 
   // Redirect
   header("location:" . SITEURL . "admin/manage-admin.php");
 } else {
   // Add session
-  $_SESSION['add'] = "Failed to Add Admin";
+  $_SESSION['add'] = "<span class='error'>Failed to Add Admin</span>";
 
   // Redirect
   header("location:" . SITEURL . "admin/add-admin.php");
