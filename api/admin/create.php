@@ -3,6 +3,9 @@ include '../config/Global.php';
 include '../config/Database.php';
 include '../models/Admin.php';
 
+// Starts the session
+session_start();
+
 // Instantiate Database
 $database = new Database();
 $db = $database->connect();

@@ -15,6 +15,14 @@
 					unset($_SESSION['add']); // Removes the Session 'add'
 				}
 				?>
+
+				<?php
+
+				if (isset($_SESSION['delete'])) {
+					echo $_SESSION['delete']; // Display the Session 'delete'
+					unset($_SESSION['delete']); // Removes the Session 'delete'
+				}
+				?>
 			</div>
 		</div>
 		<!-- Message Section Ends-->
@@ -38,6 +46,7 @@
 
 			// Loop each item
 			foreach ($results['data'] as $result) {
+
 				echo
 				"
 				<tr>
