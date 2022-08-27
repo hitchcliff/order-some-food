@@ -44,7 +44,7 @@
 					<td>" . $result['id'] . "</td>
 					<td>" . $result['full_name'] . "</td>
 					<td>" . $result['username'] . "</td>
-					<td>
+					<td class='btns'>
 						<a class='btn-secondary' href=''>
 							Update Admin
 						</a>
