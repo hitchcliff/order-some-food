@@ -71,7 +71,7 @@ table tr td {
 .message-container {
   display: flex;
   gap: 2%;
-  margin: 2% 0;
+  margin: 1% 0;
   align-items: center;
 }
 

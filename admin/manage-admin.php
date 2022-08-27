@@ -17,10 +17,16 @@
 				?>
 
 				<?php
-
 				if (isset($_SESSION['delete'])) {
 					echo $_SESSION['delete']; // Display the Session 'delete'
 					unset($_SESSION['delete']); // Removes the Session 'delete'
+				}
+				?>
+
+				<?php
+				if (isset($_SESSION['update'])) {
+					echo $_SESSION['update']; // Display the Session 'update'
+					unset($_SESSION['update']); // Removes the Session 'update'
 				}
 				?>
 			</div>
@@ -54,7 +60,7 @@
 					<td>" . $result['full_name'] . "</td>
 					<td>" . $result['username'] . "</td>
 					<td class='btns'>
-						<a class='btn-secondary' href=''>
+						<a class='btn-secondary' href='" . MANAGE_UPDATE_ADMIN_URL . "?id=" . $result['id'] . "'>
 							Update Admin
 						</a>
 						<a class='btn-danger' href='" . DELETE_ADMIN_URL . "?id=" . $result['id'] . "'>

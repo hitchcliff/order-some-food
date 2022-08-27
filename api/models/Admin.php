@@ -84,6 +84,42 @@ class Admin
     return $stmt;
   }
 
+  public function update()
+  {
+    $query = 'UPDATE tbl_admin
+    SET
+      full_name = :full_name, 
+      username = :username
+    WHERE
+      id = :id
+    ';
+
+    // Prepare Statement
+    $stmt = $this->conn->prepare($query);
+
+    // Clean Data
+    $this->id = htmlspecialchars(strip_tags($this->id));
+    $this->full_name = htmlspecialchars(strip_tags($this->full_name));
+    $this->username = htmlspecialchars(strip_tags($this->username));
+
+    // Bind params
+    $stmt->bindParam(":id", $this->id);
+    $stmt->bindParam(":full_name", $this->full_name);
+    $stmt->bindParam(":username", $this->username);
+
+    // Execute
+    if ($stmt->execute()) {
+      return true;
+    }
+
+    echo $stmt->execute();
+
+    // Print error something goes wrong
+    printf('Error: ', $stmt->error);
+
+    return false;
+  }
+
   public function delete()
   {
     $query = 'DELETE from tbl_admin
