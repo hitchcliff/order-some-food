@@ -29,6 +29,13 @@
 					unset($_SESSION['update']); // Removes the Session 'update'
 				}
 				?>
+
+				<?php
+				if (isset($_SESSION['update-password'])) {
+					echo $_SESSION['update-password']; // Display the Session 'update'
+					unset($_SESSION['update-password']); // Removes the Session 'update'
+				}
+				?>
 			</div>
 		</div>
 		<!-- Message Section Ends-->
@@ -60,6 +67,9 @@
 					<td>" . $result['full_name'] . "</td>
 					<td>" . $result['username'] . "</td>
 					<td class='btns'>
+						<a class='btn-secondary' href='" . UPDATE_PASSWORD_ADMIN_URL . "?id=" . $result['id'] . "'>
+						Change Password
+						</a>
 						<a class='btn-secondary' href='" . MANAGE_UPDATE_ADMIN_URL . "?id=" . $result['id'] . "'>
 							Update Admin
 						</a>

@@ -10,6 +10,8 @@ class Admin
   public $full_name;
   public $username;
   public $password;
+  public $old_password;
+
   public function __construct($db)
   {
     $this->conn = $db;
@@ -106,7 +108,6 @@ class Admin
     $stmt->bindParam(":id", $this->id);
     $stmt->bindParam(":full_name", $this->full_name);
     $stmt->bindParam(":username", $this->username);
-
     // Execute
     if ($stmt->execute()) {
       return true;
@@ -142,5 +143,65 @@ class Admin
     printf('Error: ', $stmt->error);
 
     return false;
+  }
+
+  // Others
+  public function is_exists()
+  {
+    $query = 'SELECT * from tbl_admin
+      WHERE 
+        id = :id AND
+        password = :old_password
+    ';
+
+    // Prepare statement
+    $stmt = $this->conn->prepare($query);
+
+    // Clean data
+    $this->id = htmlspecialchars(strip_tags($this->id));
+    $this->old_password = htmlspecialchars(strip_tags($this->old_password));
+
+    // Bind params
+    $stmt->bindParam(":id", $this->id);
+    $stmt->bindParam(":old_password", $this->old_password);
+
+    // Execute statement
+    $stmt->execute();
+
+    // Count result
+    $count = $stmt->rowCount();
+
+    return $count == 1;
+  }
+
+  public function update_password()
+  {
+    $query = 'UPDATE tbl_admin
+    SET
+      password = :password
+    WHERE 
+      id = :id
+    ';
+
+    // Prepare statement
+    $stmt = $this->conn->prepare($query);
+
+    // Clean data
+    $this->id = htmlspecialchars(strip_tags($this->id));
+    $this->password = htmlspecialchars(strip_tags($this->password));
+
+    // Bind data
+    $stmt->bindParam(":id", $this->id);
+    $stmt->bindParam(":password", $this->password);
+
+    // Execute statement for finding the user
+    if ($stmt->execute()) {
+      return $stmt;
+    }
+
+    // Print if something goes wrong
+    printf("Error: ", $stmt->error);
+
+    return $stmt;
   }
 }

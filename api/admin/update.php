@@ -23,8 +23,6 @@ if (isset($_POST['update-admin-submit'])) {
   $admin->full_name = $full_name;
   $admin->username = $username;
 
-  echo $id . $full_name . $username;
-
   // Perform validation
   if (!$id || !$full_name || !$username) {
     $_SESSION['update'] = '<span class="error">Admin is not updated</span>';

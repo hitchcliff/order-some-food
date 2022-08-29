@@ -9,3 +9,5 @@ define('MANAGE_UPDATE_ADMIN_URL', SITEURL . 'admin/update-admin.php');
 define('CREATE_ADMIN_URL', SITEURL . 'api/admin/create.php');
 define('UPDATE_ADMIN_URL', SITEURL . 'api/admin/update.php');
 define('DELETE_ADMIN_URL', SITEURL . 'api/admin/delete.php');
+define('UPDATE_PASSWORD_ADMIN_URL', SITEURL . 'admin/change-password.php');
+define('CHANGE_PASSWORD', SITEURL . 'api/admin/change-password.php');
