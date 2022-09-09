@@ -1,3 +1,4 @@
+<?php include('partials/header.php'); ?>
 <?php include('partials/menu.php'); ?>
 
 <!-- Main Content Starts -->
