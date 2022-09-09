@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="../css/base.css">
 	<link rel="stylesheet" href="../css/utilities.css">
 	<link rel="stylesheet" href="../css/admin.css">
+	<link rel="stylesheet" href="../css/login.css">
 
 	<title>Admin</title>
 </head>

@@ -11,3 +11,5 @@ define('UPDATE_ADMIN_URL', SITEURL . 'api/admin/update.php');
 define('DELETE_ADMIN_URL', SITEURL . 'api/admin/delete.php');
 define('UPDATE_PASSWORD_ADMIN_URL', SITEURL . 'admin/change-password.php');
 define('CHANGE_PASSWORD', SITEURL . 'api/admin/change-password.php');
+define('LOGIN_API_URL', SITEURL . 'api/login/login.php');
+define('LOGIN_PAGE_URL', SITEURL . 'admin/login.php');

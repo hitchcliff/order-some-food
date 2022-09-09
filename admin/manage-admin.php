@@ -37,6 +37,13 @@
 					unset($_SESSION['update-password']); // Removes the Session 'update'
 				}
 				?>
+
+				<?php
+				if (isset($_SESSION['login'])) {
+					echo $_SESSION['login']; // Display the Session 'update'
+					unset($_SESSION['login']); // Removes the Session 'update'
+				}
+				?>
 			</div>
 		</div>
 		<!-- Message Section Ends-->
