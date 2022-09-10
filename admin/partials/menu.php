@@ -8,6 +8,7 @@
 				<a href="manage-category.php">Category</a>
 				<a href="manage-food.php">Food</a>
 				<a href="manage-orders.php">Orders</a>
+				<a href="logout.php">Logout</a>
 			</li>
 		</ul>
 	</div>

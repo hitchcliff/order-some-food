@@ -27,9 +27,13 @@ $count = $result->rowCount();
 
 // There is an Admin
 if ($count == 1) {
+  // Set cookie
+  $user = serialize($result->fetch());
+  setcookie('user', $user, time() + (86400 * 30), "/"); // expires after 30days;
+
   $_SESSION['login'] = "<span class='success'>Login Successfully</span>";
 
-  header('location:' . MANAGE_ADMIN_URL);
+  header('location:' . ADMIN_PAGE_URL);
 } else {
   $_SESSION['login'] = "<span class='error'>Error logging in</span>";
 
